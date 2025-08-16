@@ -1,0 +1,188 @@
+/* Base Styles */
+:root {
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --dark-1: #0f172a;
+  --dark-2: #1e293b;
+  --light: #f8f8f8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
+  color: white;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(12px)) {
+  .glass {
+    background: rgba(15, 23, 42, 0.8);
+  }
+}
+
+/* Neon Button */
+.btn-neon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn-neon:hover {
+  transform: scale(1.05);
+}
+
+/* Skill Bar */
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--primary);
+  transition: width 0.5s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  display: none;
+}
+
+.mobile-menu-sidebar {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 300px;
+  height: 100%;
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-sidebar.open {
+  transform: translateX(0);
+}
+
+/* Project Cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Badges */
+.skill-badge {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+.dark-mode .mobile-menu-sidebar {
+  background-color: #2d3748;
+}
+
+.dark-mode .skill-badge {
+  background-color: #4a5568;
+  color: #f7fafc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
+    color: white;
+  }
+  
+  .mobile-menu-sidebar {
+    background-color: #2d3748;
+    color: white;
+  }
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

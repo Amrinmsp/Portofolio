@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional dengan fitur AI asisten">
+    <title>MY Portofolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark:bg-gray-900">
+    <!-- Header Utama -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm py-4 px-6 md:px-10 sticky top-0 z-30 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo atau Nama Anda -->
+            <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 flex items-center">
+                <i class="fas fa-user-tie mr-2"></i>
+                AMRIN
+            </a>
+
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 py-2 rounded-md">Home</a>
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 py-2 rounded-md">Tentang</a>
+                <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 py-2 rounded-md">Projek</a>
+                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-300 py-2 rounded-md">Keahlian</a>
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
+                    Hubungi Saya
+                </a>
+                <!-- <button id="dark-mode-toggle" data-dark-mode-toggle class="text-gray-600 dark:text-yellow-300 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button> -->
+            </nav>
+
+            <!-- Tombol Hamburger Menu -->
+            <div class="flex items-center md:hidden space-x-4">
+                <button id="dark-mode-toggle-mobile" data-dark-mode-toggle class="text-gray-600 dark:text-yellow-300 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <button id="hamburger-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay untuk Menu Mobile -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+    <!-- Menu Mobile Sidebar -->
+    <div id="mobile-menu-sidebar" class="mobile-menu-sidebar flex flex-col p-6 space-y-6 dark:bg-gray-800">
+        <div class="flex justify-between items-center">
+            <span class="text-xl font-bold dark:text-white">Menu</span>
+            <button id="close-mobile-menu" class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <a href="#home" class="text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg font-medium transition duration-300 py-2 rounded-md">Home</a>
+        <a href="#about" class="text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg font-medium transition duration-300 py-2 rounded-md">Tentang</a>
+        <a href="#projects" class="text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg font-medium transition duration-300 py-2 rounded-md">Projek</a>
+        <a href="#skills" class="text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 text-lg font-medium transition duration-300 py-2 rounded-md">Keahlian</a>
+        <a href="#contact" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold text-lg text-center hover:bg-blue-700 transition duration-300 shadow-md">
+            Hubungi Saya
+        </a>
+    </div>
+
+    <!-- Konten Utama Halaman -->
+    <main class="container mx-auto p-6 md:p-10">
+        <!-- Section Home/Hero -->
+        <section id="home" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">Hai, Saya <span class="text-blue-600 dark:text-blue-400">AMRIN</span></h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-6">Data Analysis dan Web Development</h2>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                            Selamat datang di portofolio profesional saya. Saya berspesialisasi dalam bidang Data Analysis dan Web Development.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md flex items-center">
+                                Lihat Projek <i class="fas fa-arrow-down ml-2"></i>
+                            </a>
+                            <a href="#contact" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-gray-700 transition duration-300 flex items-center">
+                                Hubungi Saya <i class="fas fa-paper-plane ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+                            <!-- Ganti dengan foto Anda -->
+                            <img src="source/amrin.jpg" alt="Foto AMRIN" class="w-full h-full object-cover" style="object-position: center top;" loading="lazy" width="320" height="320">
+                            <div class="absolute inset-0 bg-blue-500 opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Tentang Saya -->
+        <section id="about" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                    <i class="fas fa-user mr-3 text-blue-600 dark:text-blue-400"></i>
+                    Tentang Saya
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Profil Saya</h3>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                            Saya seorang [profesi] yang berdedikasi dengan hasrat untuk [spesialisasi]. Dengan latar belakang di [bidang terkait], saya membawa pendekatan unik untuk setiap proyek.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                            Saya percaya pada [filosofi kerja Anda] dan selalu berusaha memberikan hasil terbaik untuk klien saya.
+                        </p>
+                        <div class="mt-6">
+                            <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                                Unduh CV Saya
+                                <i class="fas fa-download ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Pengalaman</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-500 pl-4 py-1">
+                                <h4 class="font-bold text-gray-800 dark:text-white">[Posisi] di [Perusahaan]</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">[Tahun] - [Tahun]</p>
+                                <p class="text-gray-700 dark:text-gray-300 mt-1">[Deskripsi singkat tanggung jawab dan pencapaian]</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4 py-1">
+                                <h4 class="font-bold text-gray-800 dark:text-white">[Posisi] di [Perusahaan]</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">[Tahun] - [Tahun]</p>
+                                <p class="text-gray-700 dark:text-gray-300 mt-1">[Deskripsi singkat tanggung jawab dan pencapaian]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projek -->
+        <section id="projects" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                    <i class="fas fa-project-diagram mr-3 text-blue-600 dark:text-blue-400"></i>
+                    Projek Terbaru
+                </h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-8">
+                    Berikut adalah beberapa proyek terbaru yang telah saya kerjakan. Setiap proyek mencerminkan pendekatan kreatif dan teknis saya terhadap solusi desain.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-600">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://via.placeholder.com/600x400" alt="Nama Projek 1" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Nama Projek 1</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Jenis Projek • Tahun</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Deskripsi singkat tentang proyek ini dan peran Anda dalam pengembangannya.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 1</span>
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 2</span>
+                            </div>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+                                Lihat Detail <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-600">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://via.placeholder.com/600x400" alt="Nama Projek 2" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Nama Projek 2</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Jenis Projek • Tahun</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Deskripsi singkat tentang proyek ini dan peran Anda dalam pengembangannya.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 1</span>
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 2</span>
+                            </div>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+                                Lihat Detail <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-600">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://via.placeholder.com/600x400" alt="Nama Projek 3" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Nama Projek 3</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Jenis Projek • Tahun</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Deskripsi singkat tentang proyek ini dan peran Anda dalam pengembangannya.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 1</span>
+                                <span class="skill-badge bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Teknologi 2</span>
+                            </div>
+                            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+                                Lihat Detail <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                        Lihat Semua Projek <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Keahlian -->
+        <section id="skills" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                    <i class="fas fa-code mr-3 text-blue-600 dark:text-blue-400"></i>
+                    Keahlian Saya
+                </h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-8">
+                    Berikut adalah berbagai keahlian dan teknologi yang saya kuasai. Saya terus mengembangkan kemampuan baru untuk tetap relevan dengan perkembangan industri.
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Skill 1 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">HTML5</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">CSS3</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">JavaScript</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">Figma</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 5 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">React</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 6 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">Database</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 7 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">Responsif</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 8 -->
+                    <div class="skill-badge bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-center hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-2">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 dark:text-white">UI/UX</h3>
+                        <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section AI Assistant -->
+        <section id="ai-assistant" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                    <i class="fas fa-robot mr-3 text-blue-600 dark:text-blue-400"></i>
+                    ✨ Asisten Portofolio AI ✨
+                </h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    Tanyakan apa saja tentang keahlian atau proyek di portofolio ini! Asisten AI saya akan membantu menjawab pertanyaan Anda.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 mb-4">
+                    <input type="text" id="ai-question-input" placeholder="Contoh: Apa pengalaman Anda dalam desain responsif?" class="flex-grow p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+                    <button id="ask-ai-button" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300 shadow-md flex items-center justify-center">
+                        Tanya AI
+                        <span id="loading-spinner" class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    </button>
+                </div>
+                <div id="ai-response-area" class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md border border-gray-200 dark:border-gray-600 min-h-[100px] text-gray-800 dark:text-gray-300 leading-relaxed">
+                    Jawaban akan muncul di sini...
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    *Jawaban dihasilkan oleh Gemini AI. Akurasi dapat bervariasi.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Kontak -->
+        <section id="contact" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                    <i class="fas fa-envelope mr-3 text-blue-600 dark:text-blue-400"></i>
+                    Hubungi Saya
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Informasi Kontak</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            Tertarik bekerja sama atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya melalui salah satu cara berikut:
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Email</p>
+                                    <a href="https://mail.google.com/mail/u/2/#inbox" target="_blank" class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">amrinmsp@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Telepon</p>
+                                    <a href="tel:+6285232458915" class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">+6285232458915</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/amrin-msp-a86711293/" target="_blank" class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">linkedin.com/in/amrin msp</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fab fa-github text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">GitHub</p>
+                                    <a href="https://github.com/Amrinmsp" target="_blank" class="text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">https://github.com/Amrinmsp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">Formulir Kontak</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 mb-1">Nama Anda</label>
+                                <input type="text" id="name" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-1">Subjek</label>
+                                <input type="text" id="subject" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-1">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300 shadow-md w-full">
+                                Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 py-8 px-6 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+                        AMRIN
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">
+                        © 2025 MY Portofolio. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
