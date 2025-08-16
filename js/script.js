@@ -1,29 +1,3 @@
-// Dark Mode Toggle - Perbaikan kecil
-const darkModeToggle = document.querySelectorAll('[data-dark-mode-toggle]');
-
-// System preference + local storage check
-const applyDarkMode = () => {
-  const isDark = localStorage.getItem('darkMode') === 'enabled' || 
-                 (!localStorage.getItem('darkMode') && 
-                  window.matchMedia('(prefers-color-scheme: dark)').matches);
-  
-  document.documentElement.classList.toggle('dark', isDark);
-  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-};
-
-// Initialize on load
-applyDarkMode();
-
-// Event delegation for all toggle buttons
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-dark-mode-toggle]');
-  if (btn) {
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('darkMode', 
-      document.documentElement.classList.contains('dark') ? 'enabled' : 'disabled');
-  }
-});
-
 // Mobile Menu - Optimized
 const mobileMenu = {
   button: document.getElementById('hamburger-button'),
@@ -171,7 +145,7 @@ class PortfolioAI {
       // In production, replace with actual API call
       const response = await this.mockAPICall(prompt); 
       
-      this.showResponse(response, 'text-gray-700 dark:text-gray-300');
+      this.showResponse(response, 'text-gray-700');
     } catch (error) {
       console.error("AI Error:", error);
       this.showResponse("Maaf, terjadi kesalahan. Silakan coba lagi.", 'text-red-500');

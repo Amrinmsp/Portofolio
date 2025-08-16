@@ -1,12 +1,12 @@
 /* Base Styles */
 :root {
-  --primary: #3b82f6;
-  --secondary: #8b5cf6;
-  --dark-1: #0f172a;
-  --dark-2: #1e293b;
-  --light: #f8f8f8;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --primary: #3b82f6; /* Biru */
+  --secondary: #8b5cf6; /* Ungu */
+  --text-dark: #1e293b;  /* Abu-abu tua untuk teks */
+  --text-light: #475569; /* Abu-abu lebih terang untuk sub-teks */
+  --background: #f1f5f9; /* Latar belakang abu-abu sangat terang */
+  --surface: #ffffff;    /* Warna dasar untuk card/elemen (putih) */
+  --border-light: #e2e8f0; /* Warna border */
 }
 
 * {
@@ -17,36 +17,36 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
-  color: white;
+  background-color: var(--background);
+  color: var(--text-dark);
   min-height: 100vh;
   transition: all 0.3s ease;
 }
 
-/* Glassmorphism Effect */
+/* Efek Kaca (Disesuaikan untuk Latar Belakang Terang) */
 .glass {
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.7); /* Latar belakang putih transparan */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Border hitam transparan */
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Bayangan lebih lembut */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
 }
 
-/* Fallback for browsers without backdrop-filter support */
+/* Fallback untuk browser tanpa backdrop-filter */
 @supports not (backdrop-filter: blur(12px)) {
   .glass {
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--surface); /* Fallback menjadi putih solid */
   }
 }
 
-/* Neon Button */
+/* Tombol Neon */
 .btn-neon {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -66,7 +66,7 @@ body {
 
 /* Skill Bar */
 .skill-bar {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-light); /* Latar belakang bar abu-abu terang */
   border-radius: 10px;
   height: 8px;
   overflow: hidden;
@@ -87,7 +87,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--border-light);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -97,7 +97,7 @@ body {
 
 /* Mobile Menu */
 .mobile-menu-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6); /* Overlay sedikit lebih gelap */
   position: fixed;
   top: 0;
   left: 0;
@@ -108,7 +108,7 @@ body {
 }
 
 .mobile-menu-sidebar {
-  background-color: #ffffff;
+  background-color: var(--surface); /* Latar belakang sidebar putih */
   position: fixed;
   top: 0;
   right: 0;
@@ -125,7 +125,7 @@ body {
   transform: translateX(0);
 }
 
-/* Project Cards */
+/* Kartu Proyek */
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -135,7 +135,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Skill Badges */
+/* Badge Keahlian */
 .skill-badge {
   transition: all 0.3s ease;
   display: inline-block;
@@ -145,17 +145,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Dark Mode */
-.dark-mode .mobile-menu-sidebar {
-  background-color: #2d3748;
-}
-
-.dark-mode .skill-badge {
-  background-color: #4a5568;
-  color: #f7fafc;
-}
-
-/* Animations */
+/* Animasi */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -163,19 +153,6 @@ body {
 
 .fade-in {
   animation: fadeIn 0.5s ease forwards;
-}
-
-/* Responsive Dark Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
-    color: white;
-  }
-  
-  .mobile-menu-sidebar {
-    background-color: #2d3748;
-    color: white;
-  }
 }
 
 /* Utility Classes */
